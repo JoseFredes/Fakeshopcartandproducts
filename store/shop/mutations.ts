@@ -14,12 +14,15 @@ export const mutations: MutationTree<ShopState> = {
     state.products = products;
   },
   addToCart: (state, product): void =>{
-    if(!state.cart.includes(product)){
-      
-      state.cart.push({productCart: product , quantity: 1});      
+    let productInCart = state.cart.find(item => {
+      return item.quantity >= 1
+    })
+  
+    if(!productInCart){
+         state.cart.push({productCart: product , quantity: 1});      
     }
     else{
-      console.log('si lo tengo')
+       productInCart.quantity++
     }  
   }
 }
