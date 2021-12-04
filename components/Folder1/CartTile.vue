@@ -3,9 +3,26 @@
     <v-flex>
       <v-card>
         <div v-for="cartProduct in cart" :key="cartProduct.id">
-          <v-card-text>
-            {{ cartProduct.productCart.product.title}}
-          </v-card-text>
+          <ul>
+            <li>
+              <div class="d-inline-flex">
+                <v-card-text class="text-h8 black--text pl-0">
+                  {{ cartProduct.productCart.product.title }}
+                </v-card-text>
+                <v-card-text>
+                  Price : {{ cartProduct.productCart.product.price }}
+                  Quantity: {{ cartProduct.quantity }}
+                </v-card-text>
+                <v-spacer></v-spacer>
+                <v-img
+                  :src="cartProduct.productCart.product.image"
+                  contain
+                  max-height="70"
+                  max-width="70"
+                ></v-img>
+              </div>
+            </li>
+          </ul>
         </div>
       </v-card>
     </v-flex>
@@ -24,7 +41,7 @@ export default class CartTile extends Vue {
   @shopModule.State("cart") cart!: Cart[];
 
   getProductsInCart() {
-     console.log(this.cart.values())
+    console.log(this.cart.values());
   }
   mounted() {
     this.cart;

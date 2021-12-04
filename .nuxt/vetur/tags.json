@@ -1,11 +1,11 @@
 {
-  "SharedNavbar": {
-    "description": "Auto imported from components/Shared/Navbar.vue"
-  },
   "Folder1CartTile": {
     "description": "Auto imported from components/Folder1/CartTile.vue"
   },
   "Folder1ProductTile": {
     "description": "Auto imported from components/Folder1/ProductTile.vue"
+  },
+  "SharedNavbar": {
+    "description": "Auto imported from components/Shared/Navbar.vue"
   }
 }

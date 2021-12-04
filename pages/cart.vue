@@ -17,7 +17,6 @@
         <cart-tile :cart="itemcart"/>
       </v-col>
        -->
-
        <cart-tile/>
     </div>
   </div>
