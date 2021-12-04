@@ -37,3 +37,4 @@ export default class ViewCart extends Vue {
   @shopModule.State('cart') cart!: Cart[];
 }
 </script>
+

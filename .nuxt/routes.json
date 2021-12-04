@@ -1,0 +1,16 @@
+[
+  {
+    "name": "cart",
+    "path": "/cart",
+    "component": "/Users/josefredes/Documents/Dev/Fakeshopcartandproducts/pages/cart.vue",
+    "chunkName": "pages/cart",
+    "_name": "_11bd269c"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/josefredes/Documents/Dev/Fakeshopcartandproducts/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_9a4f9aa0"
+  }
+]

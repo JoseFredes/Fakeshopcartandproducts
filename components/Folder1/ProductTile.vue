@@ -24,7 +24,7 @@
                 </div>
                 <div class="d-inline-flex">
                   <v-rating
-                    :value="ratingvalue"
+                    :value="product.rating.rate"
                     color="#FFAB4C"
                     background-color="#142F43"
                     dense
@@ -33,7 +33,7 @@
                     size="14"
                   >
                   </v-rating>
-                  <div class="grey--text ms-4">4.5 ({{ product.id }})</div>
+                  <div class="grey--text ms-4">{{ product.rating.rate}} ({{product.rating.count}})</div>
                 </div>
                 <v-divider class="mx-4"></v-divider>
                 <div class="d-inline-flex pa-2">
@@ -78,17 +78,13 @@ export default class ProductTile extends Vue {
   @shopModule.Mutation('addToCart') addToCart!: Function;
   @Prop({ required: true }) readonly product!: Product;
 
-  ratingvalue: number = 1;
-  getRandomValue() {
-    this.ratingvalue = Math.floor(Math.random() * 6);
-  }
-
+  
   addProdutcsToCart() {
     this.addToCart({ product: this.product });
   }
 
   mounted() {
-    this.getRandomValue();
+   
   }
 }
 </script>
