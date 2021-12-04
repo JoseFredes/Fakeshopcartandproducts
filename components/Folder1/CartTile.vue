@@ -39,13 +39,8 @@ const shopModule = namespace("shop/");
 @Component
 export default class CartTile extends Vue {
   @shopModule.State("cart") cart!: Cart[];
-
-  getProductsInCart() {
-    console.log(this.cart.values());
-  }
   mounted() {
     this.cart;
-    this.getProductsInCart();
   }
 }
 </script>
