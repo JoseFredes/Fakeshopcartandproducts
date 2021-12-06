@@ -45,9 +45,14 @@ export const mutations: MutationTree<ShopState> = {
       return item.productCart === product
     })
     if(item){
-      if(item.quantity > 1){
-        item.quantity--
-      }
+      item.quantity--
+    }
+  },
+  removeToCart: (state, product: Product): void =>{
+    const itemInCart = state.cart.findIndex(item => item.productCart === product);
+    console.log(itemInCart);
+    if (itemInCart != -1) {
+      state.cart.splice(itemInCart, 1);
     }
   }
   

@@ -1,6 +1,7 @@
 import { ActionContext, ActionTree } from 'vuex/types';
 import RootState from '../types';
 import { ShopState } from './types';
+import { Product } from '../types';
 
 interface ShopActionContext extends ActionContext<ShopState, RootState> {}
 
@@ -16,6 +17,18 @@ export const actions: ActionTree<ShopState, RootState> = {
       .catch((_error) => commit('toggleError'))
       .finally(() => commit('toggleFetching'))
   },
+  decreaseQuantityInCart : ({commit, state}, product : Product )=>{
+    let isProduct = state.cart.find(item => item.productCart === product)
+
+    if(isProduct){
+      if(isProduct.quantity > 1){
+        commit('decreaseQuantity',product)
+      }
+      else{
+        commit('removeToCart',product)
+      }
+    }
+  }
   
 };
 

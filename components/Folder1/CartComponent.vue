@@ -23,7 +23,7 @@
                 <v-btn icon @click.prevent="decreaseQuantityProduct(item.productCart)"><v-icon>mdi-minus</v-icon></v-btn>
                   <v-card-text>{{item.quantity}}</v-card-text>
                 <v-btn icon @click.prevent="increaseQuantityProduct(item.productCart)"><v-icon>mdi-plus</v-icon></v-btn>
-                <v-btn icon ><v-icon>mdi-delete</v-icon></v-btn>
+                <v-btn icon @click.prevent="removeToCart(item.productCart)"><v-icon>mdi-delete</v-icon></v-btn>
               </v-card-acctions>
         </div>
       </v-card>
@@ -42,9 +42,8 @@ const shopModule = namespace("shop/");
 export default class CartTile extends Vue {
   @shopModule.State("cart") cart!: CartItems[];
   @shopModule.Mutation("increaseQuantity") increaseQuantityProduct !: Function;
-  @shopModule.Mutation("decreaseQuantity") decreaseQuantityProduct !: Function;
-
-  
+  @shopModule.Action("decreaseQuantityInCart") decreaseQuantityProduct !: Function;
+  @shopModule.Mutation("removeToCart") removeToCart !: Function;
 }
 </script>
 
