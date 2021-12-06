@@ -1,6 +1,6 @@
-export { default as Folder1CartTile } from '../../components/Folder1/CartTile.vue'
-export { default as Folder1ProductTile } from '../../components/Folder1/ProductTile.vue'
 export { default as SharedNavbar } from '../../components/Shared/Navbar.vue'
+export { default as Folder1CartComponent } from '../../components/Folder1/CartComponent.vue'
+export { default as Folder1ProductTile } from '../../components/Folder1/ProductTile.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

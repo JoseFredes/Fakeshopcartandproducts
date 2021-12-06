@@ -3,8 +3,8 @@
     <div v-if="fetching.active">
       <v-progress-circular
         class="progress-circular"
-        :size="300"
-        :width="30"
+        :size="200"
+        :width="20"
         color="#FF5F7E"
         indeterminate
       ></v-progress-circular>

@@ -1,4 +1,4 @@
-import { Product ,Cart } from '../types';
+import { Product ,CartItems } from '../types';
 
 
 export interface Flags {
@@ -9,5 +9,5 @@ export interface Flags {
 export interface ShopState {
   fetching: Flags;
   products: Product[];
-  cart: Cart[];
+  cart: CartItems[];
 }

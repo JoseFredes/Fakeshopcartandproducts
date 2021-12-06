@@ -13,11 +13,7 @@
       </v-card>
     </div>
     <div v-else>
-      <!-- <v-col v-for="itemcart in cart" :key="itemcart.id" cols="12" md="4">
-        <cart-tile :cart="itemcart"/>
-      </v-col>
-       -->
-       <cart-tile/>
+       <cart-component/>
     </div>
   </div>
 </template>
@@ -26,14 +22,14 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { namespace } from 'vuex-class';
-import CartTile from '@/components/Folder1/CartTile.vue';
-import { Cart } from '@/store/types';
+import CartComponent from '~/components/Folder1/CartComponent.vue';
+import { CartItems } from '@/store/types';
 const shopModule = namespace('shop/');
 @Component({
-  components: { CartTile },
+  components: { CartComponent },
 })
 export default class ViewCart extends Vue {
-  @shopModule.State('cart') cart!: Cart[];
+  @shopModule.State('cart') cart!: CartItems[];
 }
 </script>
 

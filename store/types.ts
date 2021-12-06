@@ -9,7 +9,7 @@ export interface Product {
   image: string;
 }
 
-export interface Cart{
-  productCart: Product[];
+export interface CartItems{
+  productCart: Product;
   quantity: number;
 }

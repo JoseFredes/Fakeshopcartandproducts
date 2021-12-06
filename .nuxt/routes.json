@@ -7,6 +7,13 @@
     "_name": "_11bd269c"
   },
   {
+    "name": "products-id",
+    "path": "/products/:id?",
+    "component": "/Users/josefredes/Documents/Dev/Fakeshopcartandproducts/pages/products/_id.vue",
+    "chunkName": "pages/products/_id",
+    "_name": "_77f152be"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/Users/josefredes/Documents/Dev/Fakeshopcartandproducts/pages/index.vue",
