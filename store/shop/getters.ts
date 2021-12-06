@@ -14,13 +14,12 @@ export const getters: GetterTree<ShopState, RootState> = {
     return !state.fetching.active && state.fetching.error;
   },
   getQuantityforProduct: (state, product:Product): number =>{
-    let quantity:number = 0; 
-    let itemCart = state.cart.find(item => item.productCart.id === product.id)
-    if(itemCart){
-     quantity = itemCart.quantity
-    }
-
-    return quantity;
+  
+    let itemCart = state.cart.length
+    
+    return itemCart;
+    
+  
   },
   getTotalToPay: (state) : number =>{
     let total:number = 0;
