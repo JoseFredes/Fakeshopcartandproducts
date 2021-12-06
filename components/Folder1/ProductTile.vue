@@ -78,11 +78,20 @@ const shopModule = namespace("shop/");
 @Component
 export default class ProductTile extends Vue {
   @shopModule.Mutation("addToCart") addToCart!: Function;
+  @shopModule.Getter("getQuantityforProduct") getQuantity!: number;
   @Prop({ required: true }) readonly product!: Product;
+
+  quantitycart:number = 0;
 
   addProdutcsToCart() {
     this.addToCart(this.product);
     alert('The product has been added to the cart')
+  }
+
+
+
+  mounted(){
+    
   }
 }
 </script>

@@ -1,5 +1,6 @@
 
 import { MutationTree } from 'vuex';
+import { State } from 'vuex-class';
 import { Product } from '../types';
 import { ShopState } from './types';
 
@@ -14,19 +15,15 @@ export const mutations: MutationTree<ShopState> = {
   setProducts: (state, products: Product[]): void => {
     state.products = products;
   },
-  //función que añade los productos al carrito recibiendo un producto
-  addToCart: (state, product:Product): void =>{
-    // con el find, se busca el item y que la canitdad sea mayor o igual a uno, en ese caso, el producto se agrega
-    let productInCart = state.cart.find(item => {
-      return item.productCart === product
-    })
 
-    //pregunta si exite un producto en el carrito
+  addToCart: (state, product:Product): void =>{
+    let productInCart = state.cart.find(item => {
+      return item.productCart.id === product.id
+    })
     if(!productInCart){
          state.cart.push({productCart: product , quantity: 1});      
     }
     else{
-      //se suman las cantidades
        productInCart.quantity++
     } 
   },
@@ -49,11 +46,14 @@ export const mutations: MutationTree<ShopState> = {
     }
   },
   removeToCart: (state, product: Product): void =>{
-    const itemInCart = state.cart.findIndex(item => item.productCart === product);
+    const itemInCart = state.cart.findIndex(item => item.productCart.id === product.id);
     console.log(itemInCart);
     if (itemInCart != -1) {
       state.cart.splice(itemInCart, 1);
     }
+  },
+  clearCart:(state):void =>{
+    state.cart = []
   }
   
 }
