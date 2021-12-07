@@ -91,7 +91,6 @@ export default class ProductDescription extends Vue {
     this.addToCart(this.product);
     alert("The product has been added to the cart");
   }
-
   //Get the product
   get product() {
     return this.products.find((item) => item.id.toString() == this.idProduct);

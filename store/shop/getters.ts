@@ -15,15 +15,15 @@ export const getters: GetterTree<ShopState, RootState> = {
   showError: (state): boolean => {
     return !state.fetching.active && state.fetching.error;
   },
-  // Should bring the amount of the product that is in the cart # DOES NOT WORK
-  getQuantityforProduct: (state): number =>{
-    let cuantity:number = 0;
-   
-    state.cart.forEach(item =>{
-        cuantity = item.quantity
-    })
-    
-    return  cuantity;
+  // Should bring the quantity of the product that is in the cart 
+  getQuantityforProduct: (state) => (id: number): number =>{
+    let isInCart = state.cart.find(item => item.productCart.id === id)
+    if(isInCart){
+      return isInCart.quantity;
+    }
+    else{
+      return 0;
+    }
   },
   // Get the total to pay according to the number of products and their price
   getTotalToPay: (state) : number =>{

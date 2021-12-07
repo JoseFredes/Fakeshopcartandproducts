@@ -71,7 +71,7 @@
 
                       <span>Description</span>
                     </v-tooltip>
-                    <v-card-text> In Cart: {{ getQuantity }} </v-card-text>
+                    <v-card-text> In Cart: {{ getQuantity(product.id) }} </v-card-text>
                   </v-card-actions>
                 </div>
               </v-card-text>
