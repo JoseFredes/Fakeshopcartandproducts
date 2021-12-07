@@ -71,7 +71,7 @@
 
                       <span>Description</span>
                     </v-tooltip>
-                    <v-card-text> In Cart: {{ 0 }} </v-card-text>
+                    <v-card-text> In Cart: {{ getQuantity }} </v-card-text>
                   </v-card-actions>
                 </div>
               </v-card-text>
@@ -84,28 +84,19 @@
 </template>
 
 <script lang="ts">
-// primero se impota el namespace, luego cualquier cosa de store
 import { Vue, Component, Prop } from "vue-property-decorator";
 import { namespace } from "vuex-class";
-import { CartItems, Product } from "@/store/types";
+import { CartItems, Product } from '@/store/types';
 const shopModule = namespace("shop/");
 @Component
 export default class ProductTile extends Vue {
   @shopModule.Mutation("addToCart") addToCart!: Function;
   @shopModule.Getter("getQuantityforProduct") getQuantity!: number;
   @Prop({ required: true }) readonly product!: Product;
-
-  quantitycart:number = 0;
-
+  //Add the products to the cart and then send an alert
   addProdutcsToCart() {
     this.addToCart(this.product);
     alert('The product has been added to the cart')
-  }
-
-
-
-  mounted(){
-    
   }
 }
 </script>

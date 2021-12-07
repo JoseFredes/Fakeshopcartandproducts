@@ -72,22 +72,31 @@
 import { Vue, Component, Prop } from "vue-property-decorator";
 import { Product } from "@/store/types";
 import { namespace } from "vuex-class";
+import CarouselProduct from '../components/Folder1/CarouselProduct.vue';
 
 const shopModule = namespace("shop/");
-@Component
+@Component({
+  components:{
+    CarouselProduct,
+  }
+})
 export default class ProductDescription extends Vue {
   idProduct = this.$route.params.id;
   @shopModule.State("products") products !: Product[];
   @shopModule.Mutation("removeToCart") removeToCart!: Function;
   @shopModule.Mutation("addToCart") addToCart!: Function;
 
+  // Add de product to the cart form _id page
   addProdutcsToCart() {
     this.addToCart(this.product);
     alert("The product has been added to the cart");
   }
+
+  //Get the product
   get product() {
     return this.products.find((item) => item.id.toString() == this.idProduct);
   }
+  // Filter and get the product by its category
   get productByCategory() {
     return this.products.filter(
       (item) => item.category == this.product?.category

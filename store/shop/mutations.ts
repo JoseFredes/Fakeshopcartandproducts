@@ -12,10 +12,11 @@ export const mutations: MutationTree<ShopState> = {
   toggleError: (state, value: boolean | null = null): void => {
     state.fetching.error = value === null ? !state.fetching.error : value;
   },
+  //set the products
   setProducts: (state, products: Product[]): void => {
     state.products = products;
   },
-
+  //add the products to the cart
   addToCart: (state, product:Product): void =>{
     let productInCart = state.cart.find(item => {
       return item.productCart.id === product.id
@@ -27,7 +28,7 @@ export const mutations: MutationTree<ShopState> = {
        productInCart.quantity++
     } 
   },
-
+  // Increases the quantity of a product in the cart
   increaseQuantity(state, product : Product){
       
     let item = state.cart.find(item => {
@@ -37,6 +38,7 @@ export const mutations: MutationTree<ShopState> = {
       item.quantity++
     }
   },
+  // Decreases the quantity of a product in the cart
   decreaseQuantity(state, product: Product){
     let item = state.cart.find(item => {
       return item.productCart === product
@@ -45,6 +47,7 @@ export const mutations: MutationTree<ShopState> = {
       item.quantity--
     }
   },
+  // Remove the product from the cart
   removeToCart: (state, product: Product): void =>{
     const itemInCart = state.cart.findIndex(item => item.productCart.id === product.id);
     console.log(itemInCart);
@@ -52,9 +55,10 @@ export const mutations: MutationTree<ShopState> = {
       state.cart.splice(itemInCart, 1);
     }
   },
+  // Clean the car
   clearCart:(state):void =>{
     state.cart = []
-  }
+  },
   
 }
 

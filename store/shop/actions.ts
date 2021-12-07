@@ -6,6 +6,7 @@ import { Product } from '../types';
 interface ShopActionContext extends ActionContext<ShopState, RootState> {}
 
 export const actions: ActionTree<ShopState, RootState> = {
+  // The function brings the products from the api
   fetchProducts: ({ commit }: ShopActionContext) => {
     commit('toggleFetching');
     fetch('https://fakestoreapi.com/products')
@@ -17,6 +18,7 @@ export const actions: ActionTree<ShopState, RootState> = {
       .catch((_error) => commit('toggleError'))
       .finally(() => commit('toggleFetching'))
   },
+  // This function decreases the products in the cart, when the cart reaches 0, the product is removed
   decreaseQuantityInCart : ({commit, state}, product : Product )=>{
     let isProduct = state.cart.find(item => item.productCart === product)
 

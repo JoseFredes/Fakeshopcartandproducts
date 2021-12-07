@@ -19,7 +19,7 @@ const shopModule = namespace("shop/");
 @Component
 export default class Carousel extends Vue {
   @Prop({ required: true }) readonly product!: Product;
-  name: 'carrousel-product'
+  name!: 'carrousel-product';
    
 }
 </script>
