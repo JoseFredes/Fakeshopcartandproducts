@@ -1,14 +1,15 @@
 <template>
   <div>
-    <div v-if="cart.length === 0" class="no-cart-products">
-      <v-card>
-        <v-card-title> The Cart is Empty! </v-card-title>
-        <v-card-subtitle> You can see more products in Home! </v-card-subtitle>
+    <div v-if="cart.length === 0" class=" d-flex flex-column justify-space-between align-center text-center">
+      <v-card >
+        <v-card-title class="text-h5 black--text pl-10 text-center"> The Cart is Empty! </v-card-title>
+        <v-card-subtitle class="text-h8  pl-10 text-center"> You can see more products in Home! </v-card-subtitle>
         <v-img
           contain
-          max-height="500"
-          max-width="500"
+          max-height="800"
+          max-width="800"
           src="https://i.imgur.com/LuyhYad.png"
+          position="center"
         ></v-img>
       </v-card>
     </div>

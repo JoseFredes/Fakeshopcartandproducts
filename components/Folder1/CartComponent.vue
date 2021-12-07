@@ -6,14 +6,14 @@
           <div>
             <v-card max-width="1000px" >
               <div v-for="item in cart" :key="item.id">
-                <div class="d-inline-flex">
+                <div class="d-inline-block">
                   <v-card-subtitle
                     class="card-subtitle-cart text-h8 black--text pl-10"
                   >
                     {{ item.productCart.title }}
                   </v-card-subtitle>
                   <v-spacer></v-spacer>
-                  <v-card-text>
+                  <v-card-text class="text-left pl-10">
                     Price : {{ item.productCart.price }}
                   </v-card-text>
                   <v-img
@@ -21,10 +21,12 @@
                     contain
                     max-height="70"
                     max-width="70"
+                    position="right"
+                    class="pl-10"
                   ></v-img>
                 </div>
                 <br />
-                <v-card-actions class="d-inline-flex">
+                <v-card-actions class="d-inline-flex pl-10">
                   <v-btn
                     icon
                     @click.prevent="decreaseQuantityProduct(item.productCart)"
@@ -46,7 +48,7 @@
           </div>
         </v-col>
         <v-col cols="6">
-          <v-card max-width="1000px" >
+          <v-card max-width="1000px" class="pl-10" >
             <v-card-title>Total Account</v-card-title>
             <v-card-text> Total to Pay: {{ totalToPay }}</v-card-text>
             <v-card-actions>
@@ -92,7 +94,7 @@
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 import { namespace } from "vuex-class";
-import { CartItems, Product } from "@/store/types";
+import { CartItems} from "@/store/types";
 
 const shopModule = namespace("shop/");
 
