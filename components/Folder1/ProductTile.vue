@@ -57,6 +57,20 @@
 
                       <span>Cart</span>
                     </v-tooltip>
+                    <v-tooltip bottom>
+                      <template v-slot:activator="{ on, attrs }">
+                        <v-btn
+                          icon
+                          v-bind="attrs"
+                          v-on="on"
+                          :to="`/${product.id}`"
+                        >
+                          <v-icon right color="#B000B9">mdi-plus</v-icon>
+                        </v-btn>
+                      </template>
+
+                      <span>Description</span>
+                    </v-tooltip>
                     <v-card-text> In Cart: {{ 0 }} </v-card-text>
                   </v-card-actions>
                 </div>

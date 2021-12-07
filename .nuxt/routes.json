@@ -7,17 +7,17 @@
     "_name": "_11bd269c"
   },
   {
-    "name": "products-id",
-    "path": "/products/:id?",
-    "component": "/Users/josefredes/Documents/Dev/Fakeshopcartandproducts/pages/products/_id.vue",
-    "chunkName": "pages/products/_id",
-    "_name": "_77f152be"
-  },
-  {
     "name": "index",
     "path": "/",
     "component": "/Users/josefredes/Documents/Dev/Fakeshopcartandproducts/pages/index.vue",
     "chunkName": "pages/index",
     "_name": "_9a4f9aa0"
+  },
+  {
+    "name": "id",
+    "path": "/:id",
+    "component": "/Users/josefredes/Documents/Dev/Fakeshopcartandproducts/pages/_id.vue",
+    "chunkName": "pages/_id",
+    "_name": "_f999bdd0"
   }
 ]
